@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent {
+
   constructor(
     private router: Router,
   ) { }
@@ -14,4 +15,6 @@ export class LoginPageComponent {
   redirecionarDashboard(): void{
     this.router.navigate(['dashboard']);
   }
+
+
 }
