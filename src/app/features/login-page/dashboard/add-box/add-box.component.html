@@ -1,24 +1,23 @@
-
-  <div class="overlay">
-    <div id="d-color">
-      <div id="login">
-        <div class="col-md-12">
-          <div class="form-group">
-            <i id="login-icon"></i>
-          </div>
-          <p id="text-login">Login</p>
+<div class="overlay" *ngIf="showOverlay">
+  <div id="d-color">
+    <div id="login">
+      <div class="col-md-12">
         <div class="form-group">
-          <input  type="email" class="form-control" id="exampleInputEmail1"
-            aria-describedby="emailHelp" placeholder="Email">
-          </div>
+          <input  class="form-control" [(ngModel)]="newTask.name" placeholder="Usuário">
+        </div>
         <div class="form-group">
-          <input  type="password" class="form-control" id="exampleInputPassword1"
-            placeholder="Senha">
+          <input  class="form-control" [(ngModel)]="newTask.title" placeholder="Título">
+        </div>
+        <div class="form-group">
+          <input  class="form-control" [(ngModel)]="newTask.date" placeholder="Data">
+        </div>
+        <div class="form-group">
+          <input class="form-control" [(ngModel)]="newTask.value" placeholder="Valor">
         </div>
         <div id="enviar">
-          <button  type="submit" class="btn">Entrar</button>
+          <button (click)="addNewTask()" type="submit" class="btn">Salvar</button>
         </div>
       </div>
     </div>
-    </div>
   </div>
+</div>

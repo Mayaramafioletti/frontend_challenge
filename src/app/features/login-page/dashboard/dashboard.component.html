@@ -1,48 +1,51 @@
-<app-menu></app-menu>
-<div id="background">
-  <div id="dashboard">
-    <div class="add-search">
-      <form>
-        <div id="divBusca">
-          <input name="busca" type="search" id="txtBusca" placeholder="Pesquisar" />
-          <button type="submit" class="btn"><i class="search" aria-hidden="true"></i></button>
-        </div>
-      </form>
-      <button id="add">Adicionar</button>
-    </div>
-    <table class="tabela">
-      <thead>
-        <tr>
-          <th>Usuario</th>
-          <th>Título</th>
-          <th>Data</th>
-          <th>Valor</th>
-          <th>Pago</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-    <tbody>
-      <tr *ngFor="let task of paginatedTasks">
-        <td>{{ task.name }}</td>
-        <td>{{ task.title }}</td>
-        <td>{{ formatDate(task.date) }}</td>
-        <td>R$ {{ task.value}}</td>
-        <td>
-          <input type="checkbox" [(ngModel)]="task.isPayed">
-        </td>
-        <td>
-          <div class="task-actions">
-            <button>Edit</button>
-            <span>|</span>
-            <button>Delete</button>
+<div  >
+  <app-menu></app-menu>
+  <div id="background">
+    <div id="dashboard">
+      <div class="add-search">
+        <form>
+          <div id="divBusca">
+            <input name="busca" type="search" id="txtBusca" placeholder="Pesquisar" />
+            <button type="submit" class="btn"><i class="search" aria-hidden="true"></i></button>
           </div>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-    <div class="pagination">
-      <button *ngFor="let page of pageNumbers" [disabled]="page === pageIndex" (click)="goToPage(page)">{{ page + 1 }}</button>
+        </form>
+        <button id="add" (click)="addTask()">Adicionar</button>
+      </div>
+      <table class="tabela">
+        <thead>
+          <tr>
+            <th>Usuario</th>
+            <th>Título</th>
+            <th>Data</th>
+            <th>Valor</th>
+            <th>Pago</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of paginatedTasks">
+            <td>{{ task.name }}</td>
+            <td>{{ task.title }}</td>
+            <td>{{ formatDate(task.date) }}</td>
+            <td>R$ {{ task.value}}</td>
+            <td>
+              <input type="checkbox" [(ngModel)]="task.isPayed">
+            </td>
+            <td>
+              <div class="task-actions">
+                <button>Edit</button>
+                <span>|</span>
+                <button>Delete</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagination">
+        <button *ngFor="let page of pageNumbers" [disabled]="page === pageIndex" (click)="goToPage(page)">{{ page + 1
+          }}</button>
+      </div>
     </div>
   </div>
 </div>
-<app-add-box></app-add-box>
+<app-add-box (overlayAnswer)="closeAddBox()" [showOverlay]="overlayAddTask"></app-add-box>
