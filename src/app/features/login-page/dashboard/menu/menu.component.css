@@ -4,7 +4,7 @@
 #info {
   display: flex;
   justify-content: space-between;
-  padding: 14px;
+  padding: 5px;
 }
 #user {
   display: flex;
@@ -13,4 +13,7 @@
 #text-user {
   margin-right: 16px;
   font-size: 1.2em;
+}
+.img-menu{
+  padding: 10px 0px;
 }
