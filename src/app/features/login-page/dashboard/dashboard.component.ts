@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ITask, ITasks } from 'src/app/core/interface/IMock';
+import { ITask } from 'src/app/core/interface/IMock';
 import { TaskService } from 'src/app/core/services/task.service';
 
 @Component({
@@ -14,16 +14,7 @@ export class DashboardComponent {
   pageIndex = 0;
   totalPages = 0;
   pageNumbers: number[] = [];
-  newTask: ITask = {
-    id: 0,
-    name: '52',
-    username: '',
-    title: '',
-    value: 0,
-    date: '',
-    image: '',
-    isPayed: false
-  };
+  overlayAddTask: boolean = false;
 
   constructor(
     private taskService: TaskService
@@ -41,7 +32,6 @@ export class DashboardComponent {
         this.updatePagination();
       },
       error => {
-        console.error('Error getting tasks:', error);
       }
     );
   }
@@ -61,26 +51,13 @@ export class DashboardComponent {
     this.pageIndex = page;
     this.updatePagination();
   }
-  // addTask() {
-  //   this.taskService.postTask(this.newTask).subscribe(
-  //     (createdTask: ITask) => {
-  //       console.log('New task created:', createdTask);
-  //       // Limpe os campos do formulário ou faça qualquer outra ação necessária
-  //       this.newTask = {
-  //         id: 0,
-  //         name: '',
-  //         username: '',
-  //         title: '',
-  //         value: 0,
-  //         date: '',
-  //         image: '',
-  //         isPayed: false
-  //       };
-  //     },
-  //     error => {
-  //       console.error('Error creating task:', error);
-  //     }
-  //   );
-  // }
+
+  addTask(): void {
+    this.overlayAddTask = true;
+  }
+  closeAddBox(): void {
+    this.getTasks();
+    this.overlayAddTask = false;
+  }
 
 }
