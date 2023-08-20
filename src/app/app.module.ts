@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { AddBoxComponent } from './features/login-page/dashboard/add-box/add-box.component';
+import { EditBoxComponent } from './features/login-page/dashboard/edit-box/edit-box.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AddBoxComponent } from './features/login-page/dashboard/add-box/add-box
     LoginPageComponent,
     DashboardComponent,
     MenuComponent,
-    AddBoxComponent
+    AddBoxComponent,
+    EditBoxComponent
   ],
   imports: [
     BrowserModule,

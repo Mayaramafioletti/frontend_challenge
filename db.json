@@ -1,44 +1,14 @@
 {
   "tasks": [
     {
-      "id": 5,
-      "name": "Anthea Pundy",
-      "username": "apundy4",
-      "title": "Software Engineer 4",
-      "value": 177.19,
-      "date": "2021-01-01T14:09:51Z",
-      "image": "https://robohash.org/quiaautomnis.png?size=150x150&set=set1",
-      "isPayed": true
-    },
-    {
-      "id": 6,
-      "name": "",
-      "username": "Teste2",
-      "title": "Teste1",
-      "value": "127,58",
-      "date": "19/08/23",
-      "image": "",
-      "isPayed": false
-    },
-    {
-      "id": 7,
-      "name": "",
-      "username": "teste2",
-      "title": "teste2",
-      "value": "127",
-      "date": "12/12/2023",
-      "image": "",
-      "isPayed": false
-    },
-    {
-      "id": 8,
-      "name": "teste3",
+      "id": 2,
+      "name": "Maria",
       "username": "",
-      "title": "teste123",
-      "value": "1000",
-      "date": "12/2/2023",
+      "title": "Mercado",
+      "value": "153,55",
+      "date": "2022-05-01T14:09:51Z",
       "image": "",
-      "isPayed": false
+      "isPayed": true
     }
   ],
   "account": {

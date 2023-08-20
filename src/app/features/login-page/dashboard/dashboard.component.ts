@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { format, parseISO } from 'date-fns';
 import { ITask } from 'src/app/core/interface/IMock';
 import { TaskService } from 'src/app/core/services/task.service';
 
@@ -15,6 +16,8 @@ export class DashboardComponent {
   totalPages = 0;
   pageNumbers: number[] = [];
   overlayAddTask: boolean = false;
+  editingTask: ITask | null = null;
+  formattedDate: string = '';
 
   constructor(
     private taskService: TaskService
@@ -28,7 +31,6 @@ export class DashboardComponent {
     this.taskService.getTasks().subscribe(
       (tasks: ITask[]) => {
         this.tasks = tasks;
-
         this.updatePagination();
       },
       error => {
@@ -36,8 +38,9 @@ export class DashboardComponent {
     );
   }
   formatDate(date: string): string {
-    const parts = date.split('-');
-    return `${parts[2]}/${parts[1]}/${parts[0]}`;
+    const dateObject: Date = parseISO(date);
+    this.formattedDate = format(dateObject, 'dd/MM/yyyy ')
+    return this.formattedDate;
   }
 
 
@@ -58,6 +61,50 @@ export class DashboardComponent {
   closeAddBox(): void {
     this.getTasks();
     this.overlayAddTask = false;
+  }
+  deleteTask(taskId: number): void {
+    if (confirm('Tem certeza que deseja excluir esta tarefa?')) {
+      this.taskService.deleteTask(taskId).subscribe(
+        () => {
+          this.getTasks();
+        },
+        error => {
+          console.error('Erro ao excluir tarefa:', error);
+        }
+      );
+    }
+  }
+  editTask(task: ITask): void {
+    this.editingTask = { ...task };
+  }
+
+  saveEditedTask(updatedTask: ITask): void {
+    this.taskService.putTask(updatedTask.id, updatedTask).subscribe(
+      () => {
+        this.getTasks();
+        this.editingTask = null;
+      },
+      error => {
+        console.error('Erro ao editar tarefa:', error);
+      }
+    );
+  }
+
+  cancelEditing(): void {
+    this.editingTask = null;
+  }
+  togglePayment(task: ITask): void {
+
+    this.taskService.patchTask(task.id, { isPayed: task.isPayed }).subscribe(
+      () => {
+        task.isPayed = !task.isPayed;
+        this.getTasks();
+      },
+      error => {
+        console.error('Erro ao atualizar status de pagamento:', error);
+        task.isPayed = !task.isPayed;
+      }
+    );
   }
 
 }
