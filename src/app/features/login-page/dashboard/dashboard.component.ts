@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { format, parseISO } from 'date-fns';
 import { ITask } from 'src/app/core/interface/IMock';
 import { TaskService } from 'src/app/core/services/task.service';
@@ -18,13 +19,21 @@ export class DashboardComponent {
   overlayAddTask: boolean = false;
   editingTask: ITask | null = null;
   formattedDate: string = '';
+  busca: string;
 
   constructor(
-    private taskService: TaskService
+    private taskService: TaskService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
     this.getTasks();
+    this.route.queryParams.subscribe(params => {
+      const searchName = params['name'];
+      if (searchName) {
+        this.searchByName(searchName);
+      }
+    });
   }
 
   getTasks() {
@@ -106,5 +115,24 @@ export class DashboardComponent {
       }
     );
   }
+
+  searchByName(name: string) {
+    this.paginatedTasks = this.tasks.filter(task =>
+      task.name.toLowerCase().includes(name.toLowerCase())
+    );
+  }
+
+  search() {
+    if (this.busca) {
+      const searchTerm = this.busca.toLowerCase();
+      this.paginatedTasks = this.tasks.filter(task =>
+        task.name.toLowerCase().includes(searchTerm) ||
+        task.title.toLowerCase().includes(searchTerm)
+      );
+    } else {
+      this.updatePagination();
+    }
+  }
+
 
 }

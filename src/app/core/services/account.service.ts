@@ -11,8 +11,8 @@ export class AccountService {
 
   constructor(private http: HttpClient) { }
 
-  getAccounts(): Observable<IAccount[]> {
-    return this.http.get<IAccount[]>(`${this.apiUrl}/account`);
+  getAccounts(): Observable<IAccount> {
+    return this.http.get<IAccount>(`${this.apiUrl}/account`);
   }
 
   createAccount(newAccount: IAccount): Observable<IAccount> {

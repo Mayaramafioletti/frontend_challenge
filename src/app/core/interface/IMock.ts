@@ -14,6 +14,6 @@ export interface ITask {
 };
 
 export interface IAccount {
-  emeail: string,
+  email: string,
   password: string
 }
