@@ -1,4 +1,4 @@
-<div  >
+<div>
   <app-menu></app-menu>
   <div id="background">
     <div id="dashboard">
@@ -29,13 +29,13 @@
             <td>{{ formatDate(task.date) }}</td>
             <td>R$ {{ task.value}}</td>
             <td>
-              <input type="checkbox" [(ngModel)]="task.isPayed">
+              <input type="checkbox" [(ngModel)]="task.isPayed" (change)="togglePayment(task)">
             </td>
             <td>
               <div class="task-actions">
-                <button>Edit</button>
+                <button (click)="editTask(task)">Edit</button>
                 <span>|</span>
-                <button>Delete</button>
+                <button (click)="deleteTask(task.id)">Delete</button>
               </div>
             </td>
           </tr>
@@ -49,3 +49,5 @@
   </div>
 </div>
 <app-add-box (overlayAnswer)="closeAddBox()" [showOverlay]="overlayAddTask"></app-add-box>
+<app-edit-box *ngIf="editingTask" [task]="editingTask" (saveChanges)="saveEditedTask($event)"
+  (cancelEdit)="cancelEditing()"></app-edit-box>

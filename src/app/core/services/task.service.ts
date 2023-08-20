@@ -15,6 +15,11 @@ export class TaskService {
     return this.http.get<ITask[]>(`${this.apiUrl}/tasks`);
   }
 
+  searchTasks(criteria: string, value: string): Observable<ITask[]> {
+    const queryParams = encodeURIComponent(criteria) + '=' + encodeURIComponent(value);
+    return this.http.get<ITask[]>(`${this.apiUrl}/tasks/search?${queryParams}`);
+  }
+
   postTask(newTask: ITask): Observable<ITask> {
     return this.http.post<ITask>(`${this.apiUrl}/tasks`, newTask);
   }
