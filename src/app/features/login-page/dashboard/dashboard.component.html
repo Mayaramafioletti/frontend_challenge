@@ -5,8 +5,8 @@
       <div class="add-search">
         <form>
           <div id="divBusca">
-            <input name="busca" type="search" id="txtBusca" placeholder="Pesquisar" />
-            <button type="submit" class="btn"><i class="search" aria-hidden="true"></i></button>
+            <input [(ngModel)]="busca" name="busca" type="search" id="txtBusca" placeholder="Pesquisar" (keyup.enter)="search()"  />
+            <button type="submit" class="btn" (click)="search()"><i class="search" aria-hidden="true"></i></button>
           </div>
         </form>
         <button id="add" (click)="addTask()">Adicionar</button>
@@ -14,7 +14,7 @@
       <table class="tabela">
         <thead>
           <tr>
-            <th>Usuario</th>
+            <th>Usuário</th>
             <th>Título</th>
             <th>Data</th>
             <th>Valor</th>
