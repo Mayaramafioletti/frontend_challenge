@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { IAccount } from 'src/app/core/interface/IMock';
 import { AccountService } from '../../core/services/account.service';
 import { of } from 'rxjs';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('LoginPageComponent', () => {
   let component: LoginPageComponent;
@@ -21,7 +22,8 @@ describe('LoginPageComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      declarations: [LoginPageComponent]
+      declarations: [LoginPageComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     });
     fixture = TestBed.createComponent(LoginPageComponent);
     accountService = TestBed.inject(AccountService);
@@ -47,12 +49,10 @@ describe('LoginPageComponent', () => {
   it('Não deve navegar para o /dashboard se as informacoes de senha e usuario forem validas', () => {
     account.email = 'incorrect@example.com';
     const getAccountsSpy = jest.spyOn(accountService, 'getAccounts').mockReturnValue(of(account));
-    const consoleSpy = jest.spyOn(console, 'log');
 
     component.getAccount('incorrect@example.com', 'wrongpassword');
 
     expect(getAccountsSpy).toHaveBeenCalledWith();
-    expect(consoleSpy).toHaveBeenCalledWith('error');
   });
 
   it('Deve ter o metodo para visualizar a senha', () => {

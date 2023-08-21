@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { format, parseISO } from 'date-fns';
-import { ITask } from 'src/app/core/interface/IMock';
+import { ITask, ITaskEdit } from 'src/app/core/interface/IMock';
 import { TaskService } from '../../../core/services/task.service';
 
 @Component({
@@ -72,16 +72,12 @@ export class DashboardComponent {
     this.overlayAddTask = false;
   }
   deleteTask(taskId: number): void {
-    console.log('1')
     if (confirm('Tem certeza que deseja excluir esta tarefa?')) {
       this.taskService.deleteTask(taskId).subscribe(
         () => {
-    console.log('2')
-
           this.getTasks();
         },
         error => {
-          console.error('Erro ao excluir tarefa:', error);
         }
       );
     }
@@ -97,7 +93,6 @@ export class DashboardComponent {
         this.editingTask = null;
       },
       error => {
-        console.error('Erro ao editar tarefa:', error);
       }
     );
   }
@@ -112,7 +107,6 @@ export class DashboardComponent {
         this.getTasks();
       },
       error => {
-        console.error('Erro ao atualizar status de pagamento:', error);
       }
     );
   }

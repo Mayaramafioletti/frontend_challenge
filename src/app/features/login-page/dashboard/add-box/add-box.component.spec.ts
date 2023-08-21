@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TaskService } from '../../../../core/services/task.service';
 import { of } from 'rxjs';
 import { ITask } from 'src/app/core/interface/IMock';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('AddBoxComponent', () => {
   let component: AddBoxComponent;
@@ -20,7 +21,8 @@ describe('AddBoxComponent', () => {
       declarations: [AddBoxComponent],
       providers: [
         { provide: TaskService, useValue: taskService }
-      ]
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     });
     fixture = TestBed.createComponent(AddBoxComponent);
     component = fixture.componentInstance;

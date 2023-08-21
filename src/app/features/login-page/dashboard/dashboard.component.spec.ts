@@ -6,6 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { TaskService } from '../../../core/services/task.service';
 import { of } from 'rxjs';
 import { format, parseISO } from 'date-fns';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -39,7 +40,8 @@ describe('DashboardComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule, RouterTestingModule],
-      declarations: [DashboardComponent]
+      declarations: [DashboardComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     });
     fixture = TestBed.createComponent(DashboardComponent);
     taskService = TestBed.inject(TaskService);

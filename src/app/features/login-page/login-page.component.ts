@@ -29,11 +29,9 @@ export class LoginPageComponent {
           this.router.navigate(['dashboard']);
         }
         else {
-          console.log('error')
         }
       },
       error => {
-        console.log('error')
       }
     );
   }
