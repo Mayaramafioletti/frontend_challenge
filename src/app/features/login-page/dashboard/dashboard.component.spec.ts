@@ -11,7 +11,6 @@ describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
   let taskService: TaskService;
-  let confirm: typeof window.confirm;
   const mockConfirm = jest.fn().mockImplementation(message => true);
   window.confirm = mockConfirm;
   const mockTasks = [
