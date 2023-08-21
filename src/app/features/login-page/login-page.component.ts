@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IAccount } from 'src/app/core/interface/IMock';
 import { AccountService } from 'src/app/core/services/account.service';
@@ -13,6 +13,9 @@ export class LoginPageComponent {
     email: '',
     password: ''
   }
+  @ViewChild('inputField', { static: false }) inputField: ElementRef<HTMLInputElement>;
+  passwordVisible: boolean = false;
+
 
   constructor(
     private router: Router,
@@ -22,11 +25,11 @@ export class LoginPageComponent {
   getAccount(email: string, password: string) {
     this.accountService.getAccounts().subscribe(
       (account: IAccount) => {
-        if(account.email === this.accounts.email && account.password === this.accounts.password) {
+        if (account.email === this.accounts.email && account.password === this.accounts.password) {
           this.router.navigate(['dashboard']);
 
         }
-        else{
+        else {
           console.log('error')
         }
       },
@@ -34,6 +37,12 @@ export class LoginPageComponent {
         console.log('error', error)
       }
     );
+  }
+  togglePasswordVisibility() {
+    const input = this.inputField.nativeElement;
+
+    input.type = this.passwordVisible ? 'password' : 'text';
+    this.passwordVisible = !this.passwordVisible;
   }
 
 
