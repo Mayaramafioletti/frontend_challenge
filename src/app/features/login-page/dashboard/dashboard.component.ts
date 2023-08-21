@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { format, parseISO } from 'date-fns';
-import { ITask } from 'src/app/core/interface/IMock';
-import { TaskService } from 'src/app/core/services/task.service';
+import { ITask, ITaskEdit } from 'src/app/core/interface/IMock';
+import { TaskService } from '../../../core/services/task.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -48,7 +48,7 @@ export class DashboardComponent {
   }
   formatDate(date: string): string {
     const dateObject: Date = parseISO(date);
-    this.formattedDate = format(dateObject, 'dd/MM/yyyy ')
+    this.formattedDate = format(dateObject, 'dd/MM/yyyy')
     return this.formattedDate;
   }
 
@@ -78,7 +78,6 @@ export class DashboardComponent {
           this.getTasks();
         },
         error => {
-          console.error('Erro ao excluir tarefa:', error);
         }
       );
     }
@@ -94,7 +93,6 @@ export class DashboardComponent {
         this.editingTask = null;
       },
       error => {
-        console.error('Erro ao editar tarefa:', error);
       }
     );
   }
@@ -103,15 +101,12 @@ export class DashboardComponent {
     this.editingTask = null;
   }
   togglePayment(task: ITask): void {
-
     this.taskService.patchTask(task.id, { isPayed: task.isPayed }).subscribe(
       () => {
         task.isPayed = !task.isPayed;
         this.getTasks();
       },
       error => {
-        console.error('Erro ao atualizar status de pagamento:', error);
-        task.isPayed = !task.isPayed;
       }
     );
   }

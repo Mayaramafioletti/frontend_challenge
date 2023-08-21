@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ITask } from 'src/app/core/interface/IMock';
-import { TaskService } from 'src/app/core/services/task.service';
+import { TaskService } from '../../../../core/services/task.service';
 
 @Component({
   selector: 'app-add-box',

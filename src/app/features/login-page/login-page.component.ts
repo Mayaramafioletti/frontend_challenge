@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IAccount } from 'src/app/core/interface/IMock';
-import { AccountService } from 'src/app/core/services/account.service';
+import { AccountService } from '../../core/services/account.service';
 
 @Component({
   selector: 'app-login-page',
@@ -27,14 +27,11 @@ export class LoginPageComponent {
       (account: IAccount) => {
         if (account.email === this.accounts.email && account.password === this.accounts.password) {
           this.router.navigate(['dashboard']);
-
         }
         else {
-          console.log('error')
         }
       },
       error => {
-        console.log('error', error)
       }
     );
   }
