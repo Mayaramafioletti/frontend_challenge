@@ -31,13 +31,18 @@ Node: 18.17.1
 Package Manager: npm 9.6.7
 typescript: 5.1.6
 <h4>2° passo</h4>
-Faça um 
+Faça um gi clone em uma pasta 
 
 ```
 git clone https://github.com/Mayaramafioletti/frontend_challenge.git
 ```
 
-e abra o código e rode no terminal o `npm install`
+Abra o código e rode no terminal
+
+```
+npm install
+```
+
 <h4>3° passo</h4>
 Abra uma nova guia no terminal e rode o `json-server --watch db.json --port 3030`
 <h4>4° passo</h4>
