@@ -23,6 +23,7 @@
       "ES2022",
       "dom"
     ],
+
     "esModuleInterop": true,
 
     "strictPropertyInitialization": false

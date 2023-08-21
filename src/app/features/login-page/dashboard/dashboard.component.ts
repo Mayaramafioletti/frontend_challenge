@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { format, parseISO } from 'date-fns';
 import { ITask } from 'src/app/core/interface/IMock';
-import { TaskService } from 'src/app/core/services/task.service';
+import { TaskService } from '../../../core/services/task.service';
 
 @Component({
   selector: 'app-dashboard',
