@@ -43,7 +43,7 @@
 #enviar {
   margin-top: 30px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .form-control {
   margin-left: 8px;

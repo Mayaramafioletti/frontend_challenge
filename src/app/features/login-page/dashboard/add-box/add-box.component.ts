@@ -10,6 +10,8 @@ import { TaskService } from 'src/app/core/services/task.service';
 export class AddBoxComponent {
   @Input() showOverlay: boolean;
   @Output() overlayAnswer = new EventEmitter<boolean>();
+  @Output() cancelAdd = new EventEmitter<void>();
+
   newTask: ITask = {
     id: 0,
     name: '',
@@ -27,12 +29,30 @@ export class AddBoxComponent {
 
   addNewTask() {
     this.taskService.postTask(this.newTask).subscribe(
-      (createdTask: ITask) => {;
+      (createdTask: ITask) => {
+        this.resetNewTask();
       },
       error => {
       }
     );
     this.overlayAnswer.emit(false);
+  }
+
+  cancelAdding(): void {
+    this.cancelAdd.emit();
+    this.resetNewTask();
+  }
+  resetNewTask() {
+    this.newTask = {
+      id: 0,
+      name: '',
+      username: '',
+      title: '',
+      value: 0,
+      date: '',
+      image: '',
+      isPayed: false
+    };
   }
 
 }

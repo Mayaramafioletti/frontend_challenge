@@ -133,6 +133,9 @@ export class DashboardComponent {
       this.updatePagination();
     }
   }
+  cancelAdding(): void {
+    this.overlayAddTask = false;
+  }
 
 
 }
