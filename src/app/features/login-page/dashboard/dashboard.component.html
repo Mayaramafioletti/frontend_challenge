@@ -14,11 +14,11 @@
       <table class="tabela">
         <thead>
           <tr>
-            <th>Usuário</th>
-            <th>Título</th>
-            <th>Data</th>
-            <th>Valor</th>
-            <th>Pago</th>
+            <th><button class="btn-order" (click)="sortTable('name')">Usuário {{ sortColumn === 'name' ? (sortDirection === 'asc' ? '▲' : '▼') : '-' }}</button></th>
+            <th><button class="btn-order" (click)="sortTable('title')">Título {{ sortColumn === 'title' ? (sortDirection === 'asc' ? '▲' : '▼') : '-' }}</button></th>
+            <th><button class="btn-order" (click)="sortTable('date')">Data {{ sortColumn === 'date' ? (sortDirection === 'asc' ? '▲' : '▼') : '-' }}</button></th>
+            <th><button class="btn-order" (click)="sortTable('value')">Valor {{ sortColumn === 'value' ? (sortDirection === 'asc' ? '▲' : '▼') : '-' }}</button></th>
+            <th><button class="btn-order" (click)="sortTable('isPayed')">Pago {{ sortColumn === 'isPayed' ? (sortDirection === 'asc' ? '▲' : '▼') : '-' }}</button></th>
             <th>Ações</th>
           </tr>
         </thead>

@@ -120,3 +120,8 @@ border:none;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.btn-order {
+  border: none;
+  background: transparent;
+  font-weight: bold;
+}

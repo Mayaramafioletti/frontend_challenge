@@ -157,4 +157,43 @@ describe('DashboardComponent', () => {
     component.cancelAdding();
     expect(component.overlayAddTask).toEqual(false);
   });
+  it('Deve fazer a ordem ascendente', () => {
+    component.sortColumn = 'title';
+    component.sortDirection = 'asc';
+    component.tasks = mockTasks;
+
+    component.sortTable('title');
+
+    expect(component.tasks[0].id).toBe(1);
+    expect(component.tasks[1].id).toBe(2);
+  });
+  it('Deve comprar as tasks', () => {
+    component.sortDirection = 'asc';
+
+    const task1 =  {
+      id: 1,
+      name: "Anthea Pundy",
+      username: "apundy4",
+      title: "Software Engineer III",
+      value: 177.19,
+      date: "2021-01-01T14:09:51Z",
+      image: "https://robohash.org/quiaautomnis.png?size=150x150&set=set1",
+      isPayed: false
+    };
+    const task2 =
+    {
+      id: 2,
+      name: "Anthea Pundy",
+      username: "apundy4",
+      title: "Software Engineer I",
+      value: 17.19,
+      date: "2021-01-01T14:09:51Z",
+      image: "https://robohash.org/quiaautomnis.png?size=150x150&set=set1",
+      isPayed: false
+    };
+
+    const result = component.compare(task1, task2, 'value');
+
+    expect(result).toBe(1);
+  });
 });
