@@ -24,8 +24,8 @@
         </thead>
         <tbody>
           <tr *ngFor="let task of paginatedTasks">
-            <td>{{ task.name }}</td>
-            <td>{{ task.title }}</td>
+            <td class="ellipsis">{{ task.name }}</td>
+            <td class="ellipsis">{{ task.title }}</td>
             <td>{{ formatDate(task.date) }}</td>
             <td>R$ {{ task.value}}</td>
             <td>
@@ -48,6 +48,6 @@
     </div>
   </div>
 </div>
-<app-add-box (overlayAnswer)="closeAddBox()" [showOverlay]="overlayAddTask"></app-add-box>
+<app-add-box (cancelAdd)="cancelAdding()" (overlayAnswer)="closeAddBox()" [showOverlay]="overlayAddTask"></app-add-box>
 <app-edit-box *ngIf="editingTask" [task]="editingTask" (saveChanges)="saveEditedTask($event)"
   (cancelEdit)="cancelEditing()"></app-edit-box>

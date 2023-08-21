@@ -113,3 +113,10 @@ border:none;
   align-items: flex-start;
   justify-content: flex-end;
 }
+
+.ellipsis {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

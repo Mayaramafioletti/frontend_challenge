@@ -1,16 +1,6 @@
 {
   "tasks": [
     {
-      "id": 2,
-      "name": "Maria",
-      "username": "",
-      "title": "Mercado",
-      "value": "153,55",
-      "date": "2022-05-01T14:09:51Z",
-      "image": "",
-      "isPayed": true
-    },
-    {
       "id": 5,
       "name": "Kauan",
       "username": "",
@@ -126,6 +116,46 @@
       "username": "",
       "title": "Livro",
       "value": "32,9",
+      "date": "2022-07-01T14:09:51Z",
+      "image": "",
+      "isPayed": false
+    },
+    {
+      "id": 6,
+      "name": "teste",
+      "username": "",
+      "title": "teste",
+      "value": "12,5",
+      "date": "2022-07-01T14:09:51Z",
+      "image": "",
+      "isPayed": false
+    },
+    {
+      "id": 7,
+      "name": "123",
+      "username": "",
+      "title": "123",
+      "value": 0,
+      "date": "2022-07-01T14:09:51Z",
+      "image": "",
+      "isPayed": false
+    },
+    {
+      "id": 8,
+      "name": "teste",
+      "username": "",
+      "title": "teste",
+      "value": 0,
+      "date": "2022-07-01T14:09:51Z",
+      "image": "",
+      "isPayed": false
+    },
+    {
+      "id": 9,
+      "name": "teste",
+      "username": "",
+      "title": "teste",
+      "value": 0,
       "date": "2022-07-01T14:09:51Z",
       "image": "",
       "isPayed": false
