@@ -44,7 +44,12 @@ npm install
 ```
 
 <h4>3° passo</h4>
-Abra uma nova guia no terminal e rode o `json-server --watch db.json --port 3030`
+Abra uma nova guia no terminal e rode 
+
+```
+json-server --watch db.json --port 3030
+```
+
 <h4>4° passo</h4>
 
 
