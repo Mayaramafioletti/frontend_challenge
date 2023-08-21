@@ -48,7 +48,7 @@ export class DashboardComponent {
   }
   formatDate(date: string): string {
     const dateObject: Date = parseISO(date);
-    this.formattedDate = format(dateObject, 'dd/MM/yyyy ')
+    this.formattedDate = format(dateObject, 'dd/MM/yyyy')
     return this.formattedDate;
   }
 
@@ -72,9 +72,12 @@ export class DashboardComponent {
     this.overlayAddTask = false;
   }
   deleteTask(taskId: number): void {
+    console.log('1')
     if (confirm('Tem certeza que deseja excluir esta tarefa?')) {
       this.taskService.deleteTask(taskId).subscribe(
         () => {
+    console.log('2')
+
           this.getTasks();
         },
         error => {
@@ -103,7 +106,6 @@ export class DashboardComponent {
     this.editingTask = null;
   }
   togglePayment(task: ITask): void {
-
     this.taskService.patchTask(task.id, { isPayed: task.isPayed }).subscribe(
       () => {
         task.isPayed = !task.isPayed;
@@ -111,7 +113,6 @@ export class DashboardComponent {
       },
       error => {
         console.error('Erro ao atualizar status de pagamento:', error);
-        task.isPayed = !task.isPayed;
       }
     );
   }
