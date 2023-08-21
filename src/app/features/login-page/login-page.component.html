@@ -8,13 +8,14 @@
           </div>
           <p id="text-login">Login</p>
         <div class="form-group">
-          <input [(ngModel)]='accounts.email' type="email" class="form-control"
+          <input id="email-input" [(ngModel)]='accounts.email' type="email" class="form-control"
             aria-describedby="emailHelp" placeholder="Email">
           </div>
-        <div class="form-group">
-          <input  [(ngModel)]='accounts.password' type="password" class="form-control"
-            placeholder="Senha">
-        </div>
+          <div class="form-group" id="input">
+            <input [(ngModel)]='accounts.password' #inputField class="form-control" type="password" placeholder="Senha">
+            <button id="btn-eye" type="submit" (click)="togglePasswordVisibility()"><i class="eye" aria-hidden="true"></i></button>
+          </div>
+
         <div id="enviar">
           <button (click)="getAccount(accounts.email, accounts.password)" type="submit" class="btn">Entrar</button>
         </div>
