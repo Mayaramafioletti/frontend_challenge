@@ -32,9 +32,11 @@ Package Manager: npm 9.6.7
 typescript: 5.1.6
 <h4>2° passo</h4>
 Faça um 
+
 ```
 git clone https://github.com/Mayaramafioletti/frontend_challenge.git
 ```
+
 e abra o código e rode no terminal o `npm install`
 <h4>3° passo</h4>
 Abra uma nova guia no terminal e rode o `json-server --watch db.json --port 3030`
