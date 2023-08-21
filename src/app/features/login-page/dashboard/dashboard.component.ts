@@ -20,6 +20,8 @@ export class DashboardComponent {
   editingTask: ITask | null = null;
   formattedDate: string = '';
   busca: string;
+  sortColumn: string = '';
+  sortDirection: 'asc' | 'desc' = 'asc';
 
   constructor(
     private taskService: TaskService,
@@ -131,6 +133,34 @@ export class DashboardComponent {
   cancelAdding(): void {
     this.overlayAddTask = false;
   }
+  sortTable(column: string) {
+    if (this.sortColumn === column) {
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortColumn = column;
+      this.sortDirection = 'asc';
+    }
 
+    this.tasks = this.tasks
+      .slice()
+      .sort((a, b) => this.compare(a, b, column));
+    this.updatePagination();
+  }
+
+  compare(a: ITask, b: ITask, column: string): number {
+    let aValue = column === 'value' ? a.value : a[column as keyof ITask];
+    let bValue = column === 'value' ? b.value : b[column as keyof ITask];
+    if (column == 'value') {
+      aValue = +aValue.toString().replace(',', '.');
+      bValue = +bValue.toString().replace(',', '.');
+    }
+    if (aValue < bValue) {
+      return this.sortDirection === 'asc' ? -1 : 1;
+    }
+    if (aValue > bValue) {
+      return this.sortDirection === 'asc' ? 1 : -1;
+    }
+    return 0;
+  }
 
 }
