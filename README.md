@@ -5,13 +5,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 <h2>Projeto</h2>
 Projeto proposto pela picpay para o processo seletivo, com o objetivo de desenvolver uma aplicação com um login, e um dashboard com um CRUD com paginação, filtro e ordenaçao de colunas (ASC/DESC).
 
-
-<h2>Imagens</h2>
-<img alt="Tabelas" src="https://github.com/Mayaramafioletti/frontend_challenge/assets/72114647/f12c0813-1fcd-44f4-9258-ad9493e04bc3"/>
-<img alt="Tabelas" src="https://github.com/Mayaramafioletti/frontend_challenge/assets/72114647/82addf2e-3d2f-4bbe-8204-d24506a0d2a2"/>
-<img alt="Tabelas" src="https://github.com/Mayaramafioletti/frontend_challenge/assets/72114647/59d22164-195b-4c1b-bde5-569bed821963"/>
-<img alt="Tabelas" src="https://github.com/Mayaramafioletti/frontend_challenge/assets/72114647/392831ce-51f3-4b10-a9a8-cf00b4faafb9"/>
-
 <h2>Funcionalidades da aplicação</h2>
 
 - [x] Login do usuário
@@ -68,7 +61,7 @@ Os testes foram feitos em jest, para rodar é só usar o comando
 npm test
 ```
 
-<img alt="Tabelas" src="https://github.com/Mayaramafioletti/frontend_challenge/assets/72114647/8f2eb544-61e9-45dc-af6b-2dca87c25691"/>
+<img alt="Imagem dos testes" src="https://github.com/Mayaramafioletti/frontend_challenge/assets/72114647/4bb9e3a3-e403-4b57-b3f4-bc156b9e969d"/>
 
 <h2>Tecnologias utilizadas</h2>
 <img alt="TypeScript" src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white"/>
