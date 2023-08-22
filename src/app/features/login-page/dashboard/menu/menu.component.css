@@ -1,0 +1,19 @@
+.header {
+  background: rgba(71, 124, 58, 0.323);
+}
+#info {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+#user {
+  display: flex;
+  align-items: center;
+}
+#text-user {
+  margin-right: 16px;
+  font-size: 1.2em;
+}
+.img-menu{
+  padding: 10px 0px;
+}
