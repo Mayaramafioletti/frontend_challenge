@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
 <h2>Projeto</h2>
-Projeto proposto pela picpay para o processo seletivo, com o objetivo de desenvolver uma aplicação com um login, e um dashboard com um CRUD com paginação, filtro e ordenaçao de colunas (ASC/DESC).
+Projeto proposto pela Picpay para o processo seletivo, com o objetivo de desenvolver uma aplicação com um login, e um dashboard com um CRUD com paginação, filtro e ordenaçao de colunas (ASC/DESC).
 
 <h2>Funcionalidades da aplicação</h2>
 
@@ -12,7 +12,7 @@ Projeto proposto pela picpay para o processo seletivo, com o objetivo de desenvo
 - [x] Deletar uma task
 - [x] Editar uma task
 - [x] Paginação na tabela 
-- [x] Pesquisa de task pelo usuario ou nome
+- [x] Pesquisa de task pelo usuário ou nome
 - [x] Ordenar a tabela 
 
 <h2>Rodando o projeto</h2>
@@ -49,8 +49,13 @@ Usuario: usuario@gmail.com
 Senha: usuario
 
 <h4>Informações para usuários</h4>
-Na tabela é possível ordenar pelo usuário e titulo em ordem alfabetica, na data por recente ou mais antigo, pelo valor ou se está pago ou não .
-Também é possível deletar alguma linha ou editar o usuário, titulo e valor
+Na tabela é possível ordenar 
+- Pelo usuário e titulo em ordem alfabetica
+- Na data por recente ou mais antigo
+- Pelo valor
+- Se está pago ou não
+Também é possível deletar alguma linha
+Editar o usuário, titulo e valor
 A pesquisa é feita pelo usuário ou titulo, podendo clicar enter no teclado 
 É possível adicionar alguma outra linha no botão adicionar 
 O máximo de linhas da tabela antes de criar uma nova ágina é 10
