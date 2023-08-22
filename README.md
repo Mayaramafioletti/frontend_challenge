@@ -48,7 +48,9 @@ Abra uma nova guia no terminal e instale a API mock
 ```
 npm install -g json-server 
 ```
+
 depois rode ela
+
 ```
 json-server --watch db.json --port 3030
 ```
@@ -66,7 +68,14 @@ A pesquisa é feita pelo usuário ou titulo, podendo clicar enter no teclado
 É possível adicionar alguma outra linha no botão adicionar 
 O máximo de linhas da tabela antes de criar uma nova ágina é 10
 
+<h2>Testes</h2>
+Os testes foram feitos em jest, para rodar é só usar o comando 
 
+```
+npm test
+```
+
+<img alt="Tabelas" src="https://github.com/Mayaramafioletti/frontend_challenge/assets/72114647/8f2eb544-61e9-45dc-af6b-2dca87c25691"/>
 
 <h2>Tecnologias utilizadas</h2>
 <img alt="TypeScript" src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white"/>
