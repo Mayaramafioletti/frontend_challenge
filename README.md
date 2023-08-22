@@ -74,6 +74,6 @@ O máximo de linhas da tabela antes de criar uma nova ágina é 10
 ### Social:
 - [Mayara C. Mafioletti - github](https://github.com/Mayaramafioletti/)
 - [Mayara C. Mafioletti - linkedin](https://www.linkedin.com/in/mayara-mafioletti/)
-- 
+
 
 
