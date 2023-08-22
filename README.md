@@ -7,7 +7,8 @@ Projeto proposto pela picpay para o processo seletivo, com o objetivo de desenvo
 
 
 <h2>Imagens</h2>
-![image](https://github.com/Mayaramafioletti/frontend_challenge/assets/72114647/f12c0813-1fcd-44f4-9258-ad9493e04bc3)
+<img alt="Tabelas" src="https://github.com/Mayaramafioletti/frontend_challenge/assets/72114647/f12c0813-1fcd-44f4-9258-ad9493e04bc3"/>
+![image]()
 ![image](https://github.com/Mayaramafioletti/frontend_challenge/assets/72114647/82addf2e-3d2f-4bbe-8204-d24506a0d2a2)
 ![image](https://github.com/Mayaramafioletti/frontend_challenge/assets/72114647/59d22164-195b-4c1b-bde5-569bed821963)
 ![image](https://github.com/Mayaramafioletti/frontend_challenge/assets/72114647/392831ce-51f3-4b10-a9a8-cf00b4faafb9)
