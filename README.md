@@ -43,12 +43,17 @@ npm install
 ```
 
 <h4>3° passo</h4>
-Abra uma nova guia no terminal e rode 
+Abra uma nova guia no terminal e instale a API mock
 
+```
+npm install -g json-server 
+```
+depois rode ela
 ```
 json-server --watch db.json --port 3030
 ```
 
+Depois irá reparar que foi criado um db.js na raiz do projeto copie a que está aqui no repositório e cole lá 
 <h4>4° passo</h4>
 Abra o localhost:4200 para acessar o login use as informações abaixo, se for diferente vai dar erro  
 Usuario: usuario@gmail.com
