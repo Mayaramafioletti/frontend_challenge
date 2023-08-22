@@ -50,15 +50,24 @@ Senha: usuario
 
 <h4>Informações para usuários</h4>
 Na tabela é possível ordenar 
-- Pelo usuário e titulo em ordem alfabetica
+
+- Pelo usuário e titulo em ordem alfabética
+  
 - Na data por recente ou mais antigo
+
 - Pelo valor
+  
 - Se está pago ou não
+  
 Também é possível deletar alguma linha
+
 Editar o usuário, titulo e valor
+
 A pesquisa é feita pelo usuário ou titulo, podendo clicar enter no teclado 
+
 É possível adicionar alguma outra linha no botão adicionar 
-O máximo de linhas da tabela antes de criar uma nova ágina é 10
+
+O máximo de linhas da tabela antes de criar uma nova página é 10
 
 <h2>Testes</h2>
 Os testes foram feitos em jest, para rodar é só usar o comando 
