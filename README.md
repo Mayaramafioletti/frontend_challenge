@@ -22,7 +22,7 @@ Projeto proposto pela picpay para o processo seletivo, com o objetivo de desenvo
 - [x] Pesquisa de task pelo usuario ou nome
 - [x] Ordenar a tabela 
 
-<h2Rodando o projeto</h2>
+<h2>Rodando o projeto</h2>
 <h4>1° passo</h4>
 Tenha instalado as versões do Angular, Node, typescript
 Angular CLI: 16.2.0
