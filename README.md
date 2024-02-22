@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
 <h2>Projeto</h2>
-Projeto proposto pela Picpay para o processo seletivo, com o objetivo de desenvolver uma aplicação com um login, e um dashboard com um CRUD com paginação, filtro e ordenaçao de colunas (ASC/DESC).
+Projeto proposto para um processo seletivo, com o objetivo de desenvolver uma aplicação com um login, e um dashboard com um CRUD com paginação, filtro e ordenaçao de colunas (ASC/DESC).
 
 <h2>Funcionalidades da aplicação</h2>
 
